@@ -5,6 +5,7 @@ import math
 def create_embedding_layer(vocab_size: int, d_model: int) -> nn.Embedding:
     """
     Create an embedding layer.
+    d_model (also called model dimension or embedding dimension) is the size of the vectors that flow through the entire Transformer architecture.
     """
     # Create the embedding layer
     # This allocates a [vocab_size, d_model] matrix of learnable parameters
@@ -21,6 +22,7 @@ def create_embedding_layer(vocab_size: int, d_model: int) -> nn.Embedding:
 def embed_tokens(embedding: nn.Embedding, tokens: torch.Tensor, d_model: int) -> torch.Tensor:
     """
     Convert token indices to scaled embeddings.
+    d_model (also called model dimension or embedding dimension) is the size of the vectors that flow through the entire Transformer architecture.
     """
     # Lookup: For each token index, retrieve its embedding vector
     # Input shape: [batch_size, seq_len] or [seq_len]
